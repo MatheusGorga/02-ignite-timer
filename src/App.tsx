@@ -1,5 +1,14 @@
+import { Button } from './components/Button';
+
 export function App() {
-  return <div>ola mundo</div>;
+  return (
+    <div>
+      <Button variant='primary' />
+      <Button variant='secondary' />
+      <Button variant='success' />
+      <Button />
+    </div>
+  );
 }
 
 export default App;
