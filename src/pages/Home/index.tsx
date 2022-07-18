@@ -89,6 +89,7 @@ export function Home() {
   const minutes = String(minutesAmount).padStart(2, '0')
   const seconds = String(secondsAmout).padStart(2, '0')
 
+  // Mudando o titulo da pagina
   useEffect(() => {
     if (activeCycle) {
       document.title = `Timer - ${minutes}:${seconds} `
