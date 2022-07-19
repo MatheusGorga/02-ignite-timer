@@ -25,12 +25,21 @@ export function History() {
           <tbody>
             {cycles.map((cycle) => {
               return (
-                <tr key={Math.random()}>
+                <tr key={cycle.id}>
                   <td>{cycle.task}</td>
                   <td>{cycle.minutesAmount} minutos</td>
-                  <td>há dois meses</td>
+                  <td>{cycle.startDate.toISOString()}</td>
                   <td>
-                    <Status statusColor="green">Concluído</Status>{' '}
+                    {cycle.finishedDate && (
+                      <Status statusColor="green">Concluído</Status>
+                    )}
+                    {cycle.interrupteDate && (
+                      <Status statusColor="red">Interrompido</Status>
+                    )}
+
+                    {!cycle.finishedDate && !cycle.interrupteDate && (
+                      <Status statusColor="yellow">Em andamento</Status>
+                    )}
                   </td>
                 </tr>
               )
