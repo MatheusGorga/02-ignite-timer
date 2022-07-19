@@ -23,11 +23,11 @@ export function History() {
           </thead>
 
           <tbody>
-            {[1, 2, 3, 4, 5].map((i) => {
+            {cycles.map((cycle) => {
               return (
                 <tr key={Math.random()}>
-                  <td>Tarefa</td>
-                  <td>20 min</td>
+                  <td>{cycle.task}</td>
+                  <td>{cycle.minutesAmount} minutos</td>
                   <td>há dois meses</td>
                   <td>
                     <Status statusColor="green">Concluído</Status>{' '}
